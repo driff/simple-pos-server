@@ -3,7 +3,7 @@ import * as cors from "@koa/cors";
 import * as bodyParser from "koa-bodyparser";
 import * as Router from "koa-router";
 
-export const createApp = async (): Promise<Koa> => {
+const createApp = async (): Promise<Koa> => {
     // cors
     const corsMiddleware = cors({
         allowHeaders: ["Content-Type"],
@@ -37,3 +37,5 @@ export const createApp = async (): Promise<Koa> => {
     app.use(rootRouter.routes());
     return app;
 };
+
+export default createApp;
