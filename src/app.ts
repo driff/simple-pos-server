@@ -1,15 +1,16 @@
+import "reflect-metadata";
 import * as Koa from "koa";
 import * as cors from "@koa/cors";
 import * as bodyParser from "koa-bodyparser";
 import * as Router from "koa-router";
+import {Api} from "./routes/api";
 
-const createApp = async (): Promise<Koa> => {
+export const createApp = async (): Promise<Koa> => {
     // cors
     const corsMiddleware = cors({
         allowHeaders: ["Content-Type"],
         credentials: true
     });
-
     const app = new Koa();
     app.use(async (ctx, next) => {
         try {
@@ -27,6 +28,7 @@ const createApp = async (): Promise<Koa> => {
     app.use(bodyParser());
     // root router
     const rootRouter = new Router();
+    rootRouter.use(Api.routes());
 
     // health check
     rootRouter.get("/", async ctx => {
@@ -38,4 +40,4 @@ const createApp = async (): Promise<Koa> => {
     return app;
 };
 
-export default createApp;
+// export default createApp;

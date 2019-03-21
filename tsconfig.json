@@ -1,11 +1,14 @@
 {
   "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "declaration": false,
     "module": "commonjs",
     "moduleResolution": "node",
     "target": "es2017",
     "noImplicitAny": true,
     "outDir": "dist",
+    "sourceMap": true,
     "preserveConstEnums": true,
     "removeComments": true,
     "noUnusedLocals": true,
