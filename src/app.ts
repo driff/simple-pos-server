@@ -40,4 +40,4 @@ export const createApp = async (): Promise<Koa> => {
     return app;
 };
 
-// export default createApp;
+export default createApp;
