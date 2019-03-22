@@ -2,6 +2,7 @@ import {Context} from "koa";
 import {User} from "../entity/user";
 
 export async function createUser(ctx: Context){
+    console.log('create user');
         const user: User = new User();
         user.firstName = "Johan";
         user.lastName = "Garcia";
