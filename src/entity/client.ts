@@ -1,4 +1,4 @@
-import {BaseEntity, Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import {BaseEntity, Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 
 @Entity()
 export class Client extends BaseEntity {
